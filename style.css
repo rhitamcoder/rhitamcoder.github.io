@@ -1,0 +1,680 @@
+/* ========== CSS VARIABLES (Theme) ========== */
+:root {
+    --bg: #0b0e14;
+    --surface: #1c222e95;
+    --text-primary: #e4e7ec;
+    --text-muted: #8b93a7;
+    --accent: #6ee7b7;
+    --accent-secondary: #7c9eff;
+    --gradient-color-1: #1a0b2e;
+    --gradient-color-2: #1f6f63;
+
+    --font-display: 'JetBrains Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(300deg, var(--gradient-color-1), var(--gradient-color-2));
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1, h2, h3 {
+    font-family: var(--font-display);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ========== ENTRANCE ANIMATIONS ========== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero,
+.skills,
+.projects,
+.site-footer {
+    animation: fadeInUp 0.8s ease both;
+}
+
+.skills {
+    animation-delay: 0.15s;
+}
+
+.projects {
+    animation-delay: 0.3s;
+}
+
+.site-footer {
+    animation-delay: 0.45s;
+}
+
+/* ========== HERO ========== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.terminal {
+    width: 100%;
+    max-width: 600px;
+    background-color: var(--surface);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.terminal:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.terminal-bar {
+    display: flex;
+    gap: 8px;
+    padding: 12px 16px;
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
+
+.terminal-body {
+    padding: 2rem;
+}
+
+.terminal-line {
+    font-family: var(--font-display);
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.prompt {
+    color: var(--accent);
+    margin-right: 0.5rem;
+}
+
+.name {
+    font-size: 2.5rem;
+    margin: 0.5rem 0;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.bio {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    letter-spacing: 0.01em;
+}
+
+.cursor {
+    display: inline-block;
+    color: var(--accent);
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ========== SKILLS (Zigzag) ========== */
+.skills {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--accent);
+    border-radius: 2px;
+}
+
+/* Small helper line under a section title */
+.section-hint {
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Each skill row is now a clickable link */
+.skill-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255,255, 255, 0.25);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    cursor: pointer;
+}
+
+.skill-row:hover {
+    transform: translateX(4px);
+}
+
+/*
+    Zigzag: we use nth-of-type (counts only <a> tags) instead of nth-child,
+    so the helper line under the title does not change the pattern.
+    Odd rows (Python, Excel) are flipped, same look as before.
+*/
+.skill-row:nth-of-type(odd) {
+    flex-direction: row-reverse;
+}
+
+.skill-row:nth-of-type(odd):hover {
+    transform: translateX(-4px);
+}
+
+/* Visible outline when using the keyboard (Tab key) */
+.skill-row:focus-visible,
+.btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.skill-text h3 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.skill-text p {
+    color: var(--text-muted);
+}
+
+/* "View certificate" text under each skill */
+.skill-cta {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--accent-secondary);
+    transition: color 0.25s ease;
+}
+
+.skill-row:hover .skill-cta {
+    color: var(--accent);
+}
+
+.skill-logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+/* ========== PROJECTS ========== */
+.projects {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.project-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--surface);
+    border-radius: 10px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.project-icon{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.project-info h3 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+.project-info p {
+    color: var(--text-muted);
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 3rem 2rem;
+}
+
+.btn {
+    font-family: var(--font-display);
+    padding: 0.7rem 1.5rem;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    color: var(--accent);
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+/* ========== CERTIFICATE PAGES (assets/python, sql, excel, llm) ========== */
+.cert-page,
+.projects-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+/* Centered heading with the accent underline, same style as the main page */
+.cert-title,
+.projects-title {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+}
+
+.cert-title::after,
+.projects-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Medium-sized clickable thumbnail */
+.cert-thumb {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    background-color: var(--surface);
+    border-radius: 10px;
+    padding: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.cert-thumb:hover,
+.cert-thumb:focus-visible {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    outline: none;
+}
+
+.cert-thumb img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.cert-thumb-hint {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--accent-secondary);
+    transition: color 0.25s ease;
+}
+
+.cert-thumb:hover .cert-thumb-hint {
+    color: var(--accent);
+}
+
+/* LLM page: zigzag list, same idea as the main page skills */
+.cert-list {
+    text-align: left;
+}
+
+.cert-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.cert-row:nth-child(odd) {
+    flex-direction: row-reverse;
+}
+
+.cert-row .cert-thumb {
+    margin: 0;
+    max-width: 360px;
+    flex-shrink: 0;
+}
+
+.cert-text h3 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.cert-text p {
+    color: var(--text-muted);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 3rem;
+}
+
+/* Full view overlay (opens when its #id is the target of a click) */
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: rgba(11, 14, 20, 0.92);
+    backdrop-filter: blur(6px);
+    cursor: zoom-out;
+}
+
+.lightbox:target {
+    display: flex;
+    animation: lightbox-in 0.25s ease both;
+}
+
+.lightbox img {
+    max-width: 92vw;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-close {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: var(--accent);
+}
+
+@keyframes lightbox-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ========== REDUCED MOTION ========== */
+/* People who turn off animations in their system settings get a calm page */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ========== RESPONSIVE (Mobile) ========== */
+@media (max-width: 786px) {
+    
+    .name {
+        font-size: 1.8rem;
+    }
+    
+    .terminal-body {
+        padding: 1.5rem;
+    }
+
+    .skill-row,
+    .skill-row:nth-child(odd) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .skill-logo {
+        align-self: center;
+    }
+
+    .project-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-footer {
+        flex-wrap: wrap;
+    }
+
+    .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .section-title,
+    .section-hint {
+        text-align: center;
+    }
+
+    .cert-page,
+    .projects-page {
+        padding: 3rem 1.25rem;
+    }
+
+    .cert-row,
+    .cert-row:nth-child(odd) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
+    }
+
+    .cert-row .cert-thumb {
+        max-width: 420px;
+    }
+}
+
+/* ========== PROJECTS: HOME PAGE BOX ========== */
+.project-gateway {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 0.75rem;
+    padding: 3rem 2rem;
+    cursor: pointer;
+}
+
+.gateway-count {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--accent);
+}
+
+.gateway-text {
+    max-width: 480px;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* Hovering anywhere on the box lights up the button */
+.project-gateway:hover .btn {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+.project-gateway:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* ========== PROJECTS PAGE (projects.html) ========== */
+.repo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.repo-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* justify-content: space-between; */
+    gap: 0.5rem;
+    background-color: var(--surface);
+    border-radius: 10px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.repo-card:hover,
+.repo-card:focus-visible {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    outline: none;
+}
+
+/* Zigzag: every second box is flipped */
+.repo-card:nth-child(even) {
+    /* flex-direction: row-reverse; */
+    align-items: flex-end;
+    text-align: right;
+}
+
+/* .repo-title {
+    flex: 0 0 30%;
+}
+
+.repo-card:nth-child(even) .repo-title {
+    text-align: right;
+} */
+
+.repo-title h3 {
+    color: var(--accent);
+    font-size: 1.3rem;
+}
+
+/* .repo-body {
+    flex: 1;
+} */
+
+.repo-body p {
+    color: var(--text-muted);
+}
+
+.repo-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    color: var(--accent-secondary);
+    transition: color 0.25s ease;
+}
+
+.repo-link::after {
+    content: " \2197";
+}
+
+.repo-card:hover .repo-link {
+    color: var(--accent);
+}
+
+@media (max-width: 786px) {
+    .repo-card,
+    .repo-card:nth-child(even) {
+        align-items: flex-start;
+        text-align: left;
+        padding: 1.5rem;
+    }
+}
+
+.site-footer {
+    flex-wrap: wrap;
+}
+
+.footer-email {
+    flex-basis: 100%;
+    text-align: center;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    user-select: all;
+}
+
+.aka {
+    margin-top: -0.25rem;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.aka span {
+    color: var(--accent-secondary);
+}

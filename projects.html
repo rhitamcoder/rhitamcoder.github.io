@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Arkatanu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    
+    <main class="projects-page">
+        <h1 class="section-title projects-title">Projects</h1>
+
+        <!-- 
+            HOW TO FILL EACH BOX
+            1) href=""              -> paste the GitHub repo link between the quotes
+            2) <h3></h3>            -> paste the project name between the tags
+            3) <p></p>              -> paste the project description between the tags
+            The boxes zigzag automatically, no need to do anything for that.
+            target="_blank" opens GitHub in a new tab so my portfolio stays open.
+            Delete target="_blank" rel="noopener noreferrer" if I want GitHub in the same tab.    
+        -->
+        <div class="repo-list">
+
+            <!-- ====== Project 1 ====== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/marginalia" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Marginalia 📚</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A full-stack Flask bookstore with user accounts, persistent cart, order history, and a simulated checkout that validates card details without a real payment gateway. Features a 9-book curated catalog, CSS-gradient covers, hashed passwords, and Flask-Login session auth.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ====== Project 2 ====== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/disparity" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Disparity ⚖️</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A Python data analysis of US fatal police shootings (2015–2017) alongside Census data on poverty, education, income, and race. Explores victim demographics, armed status, top cities, and state patterns with pandas, seaborn, and Plotly, including choropleth maps and death rates by race. Includes starter and solved notebooks.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ====== Project 3 ====== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/astrolytics" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Astrolytics 🚀</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A Python data analysis project exploring 60+ years of space missions (1957–2020) using a dataset of 4,300+ launches. Includes launch trends, cost analysis, success/failure rates, choropleth maps by country, and a deep dive into the USA vs. USSR Cold War Space Race, all visualized with pandas, matplotlib, and Plotly.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 4 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/matchday" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Matchday ⚽</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A Flask web app showing live standings and fixtures for 13 football competitions via the football-data.org API. Features a league selector, full standings table, upcoming fixtures with team crests, and graceful error handling. API key loaded securely from an environment variable.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 5 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/palette" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Palette 🎨</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A Flask web app that extracts the top 10 dominant colors from any uploaded image as HEX codes, using Pillow and NumPy pixel frequency analysis. Features a drag-and-drop upload interface, clickable swatch cards, and click-to-select HEX codes, with a dark-themed, minimal UI.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 6 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/goalcrawl" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Goalcrawl ⚽</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A Python web scraper that pulls FIFA World Cup history from Wikipedia using requests and BeautifulSoup. It cleans footnotes and spacing, then exports all 23 tournaments (1930–2026) with host, champion, final score, runner-up, third/fourth place, and team count into a tidy pandas-ready CSV.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 7 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/vocalize" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Vocalize 🔊</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A Python script that converts PDF text into an audiobook using the VoiceRSS text-to-speech API. Extracts text with pypdf, generates natural-sounding speech, and saves the result as an MP3. Includes error handling for missing files, failed requests, and API errors.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 8 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/brewbase" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Brewbase ☕</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A full-stack cafe directory for remote workers, built with Flask and SQLite. Browse, add, and delete cafes with details like wifi, power sockets, seating, and coffee price. Features a dynamic database-backed grid, collapsible add-cafe form, and a warm, custom-themed responsive UI.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 9 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/ledger" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Ledger 📒</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A minimal, dark-themed Flask todo app that stores each task as its own plain .txt file instead of using a database. Add, complete, and delete todos through a clean two-column UI, with automatic filename sanitization and a transparent, human-readable file-based storage system.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 10 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/cafeb" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Cafeb ☕</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A static, hand-curated directory of remote-work-friendly cafes, built with plain HTML &amp; CSS. Features six cafe listings with wifi/outlet tags, noise level, seating style, and descriptive blurbs in a responsive card grid. No backend or database — just fast, simple, deployable-anywhere static code.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 11 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/homie" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Homie 🎮</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A gaming-console-style new tab page with a live clock, time-based greeting, custom wallpaper upload, and glowing shortcut tiles for YouTube, Netflix, and more. Built with vanilla HTML/CSS/JS, ships as a Chrome Manifest V3 extension, and saves your wallpaper locally via localStorage.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 12 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/passy" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Passy 🔐</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A command-line password toolkit in Python. Generate secure random passwords with your chosen number of letters, symbols, and digits, or check how strong a password is. The checker hides what you type, breaks down the character types, and scores variety and length with feedback. Standard library only.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 13 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/tidyfy" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Tidyfy 🗂️</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A Python script that auto-organizes a cluttered Downloads folder by file type into categorized subfolders. Renames files with their last-modified date, prevents accidental overwrites, and runs in a safe dry-run mode by default. Built entirely with Python's standard library, no dependencies.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 14 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/stampify" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Stampify 🖋️</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A minimal Tkinter desktop app for adding text watermarks to images, fully local with no third-party uploads. Upload a JPEG/PNG, type your watermark, preview it live, and save as PNG or JPEG. Built with Python and Pillow for image processing, with a clean dark-themed interface.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 15 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/wpmify" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Wpmify ⌨️</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A Tkinter typing speed test measuring WPM and accuracy against randomly selected practice paragraphs. Choose 30 or 60-second modes, with live timing, auto-finish detection, and character-level accuracy scoring. Built with Python's standard library, no external dependencies required.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 16 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/gallows" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Gallows 🪢</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A terminal Hangman game in Python. Pick Easy or Hard, guess letters one at a time, and try to uncover the hidden word before your six lives run out. Features ASCII-art hangman stages, a custom logo, a built-in word list, and penalties for blank guesses. Built with the Python standard library only.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 17 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/centry" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Centry 🔢</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A terminal number guessing game in Python. The computer picks a secret number from 1 to 100, and you get 10 attempts on Easy or 5 on Hard to find it, with Too High and Too Low hints after each guess. Includes an ASCII-art logo and difficulty validation. Built with the Python standard library only.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 18 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/gridx" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>GridX ❌⭕</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A classic two-player Tic-Tac-Toe game playable in the terminal, built with pure Python and zero dependencies. Take turns placing X's and O's on a numbered 3x3 grid, with automatic win detection across all 8 combinations, tie detection, and a replay loop to play as many rounds as you like.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 19 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/reclaim" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Reclaim 🛡️</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A command-line streak tracker for breaking free from short-form content and other high-dopamine digital habits. Daily yes/no check-ins build a persistent streak, with automatic resets on missed days and randomly selected motivational messages. Built with pure Python, no dependencies.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 20 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/vanish" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Vanish ✍️</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A "most dangerous writing app" clone built with Tkinter: stop typing for 6 seconds and everything you've written is permanently erased. Features a live countdown timer with red warning cues, a flash effect on wipe, and live word count, built to crush writer's block and force momentum.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 21 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/crossfire" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Crossfire 👾</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A classic alien-shooter arcade game built entirely with Python's Turtle module. Pilot a ship, dodge enemy missiles, and blast through 5 rows of advancing aliens using simple coordinate-based collision detection. Features score/lives tracking, a starfield background, and zero external dependencies.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 22 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/ricochet" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Ricochet 🧱</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A colorful brick-breaker arcade game built entirely with Python's Turtle module. Control a paddle to keep the ball bouncing, smash through 55 rainbow bricks across 5 rows, and clear the board before losing all 3 lives. Features score/lives tracking and zero external dependencies.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 23 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/nohands" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Nohands 🦖</h3>
+                </div>
+                <div class="repo-body">
+                    <p>An auto-jump bot for the Chrome Dino game, built with Python, PyAutoGUI, and Pillow. It captures the screen area ahead of the dino, detects obstacles by pixel color matching, and automatically presses Space to jump. Includes configurable detection zone, color tolerance, and jump cooldown.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+
+            <!-- ===== Project 24 ===== -->
+            <a class="repo-card" href="https://github.com/rhitamcoder/morseify" target="_blank" rel="noopener noreferrer">
+                <div class="repo-title">
+                    <h3>Morseify 🆘</h3>
+                </div>
+                <div class="repo-body">
+                    <p>A simple command-line tool that converts text into Morse code, built with pure Python and zero dependencies. Supports the full alphabet, digits, periods, and commas, with input validation to catch unsupported characters and a replay loop to convert as many phrases as you like in one session.</p>
+                    <span class="repo-link">View on GitHub</span>
+                </div>
+            </a>
+        </div>
+        <a class="btn back-link" href="index.html#projects">Back to portfolio</a>
+    </main>
+</body>
+</html>

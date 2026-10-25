@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkatanu - Portfolio</title>
+    <meta name="description" content="Arkatanu's portfolio: Python projects, skills and certificates.">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    
+    <!-- ====== HERO / INTRO ====== -->
+    <header class="hero">
+    <div class="terminal">
+        <div class="terminal-bar">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+        </div>
+        <div class="terminal-body">
+            <p class="terminal-line"><span class="prompt">$</span> whoami</p>
+            <h1 class="name">Arkatanu</h1>
+            <p class="aka">also known as <span>Rhitam</span></p>
+            <p class="bio">Building and Developing things with Python</p>
+            <p class="terminal-line blink-cursor"><span class="prompt">$</span> <span class="cursor">_</span></p>
+        </div>
+    </div>
+    </header>
+
+    <!-- ====== SKILLS ====== -->
+    <!-- 
+        Each skill row is now a link (<a>) instead of a <div>.
+        target="_blank"  -> opens in a new tab
+        rel="noopener noreferrer" -> Keeps the new tab from controlling this page
+        Rename the certificate file names below to match your real files.
+    -->
+    <section class="skills" id="skills">
+        <h2 class="section-title">Skills</h2>
+        <p class="section-hint">Click a skill to view its certificate.</p>
+
+        <a class="skill-row" href="assets/python/index.html">
+            <div class="skill-text">
+                <h3>Python</h3>
+                <p>Core language for scripting, automation, and tooling.</p>
+                <span class="skill-cta">View certificate</span>
+            </div>
+            <div class="skill-logo">
+                <img src="assets/python-logo.png" alt="Python logo" />
+            </div>
+        </a>
+
+        <a class="skill-row" href="assets/sql/index.html">
+            <div class="skill-text">
+                <h3>SQL (Beginner)</h3>
+                <p>Learning to query and manage relational data.</p>
+                <span class="skill-cta">View certificate</span>
+            </div>
+            <div class="skill-logo">
+                <img src="assets/sql-logo.png" alt="SQL logo" />
+            </div>
+        </a>
+
+        <a class="skill-row" href="assets/excel/index.html">
+            <div class="skill-text">
+                <h3>Excel</h3>
+                <p>Data organisation, formulas, and quick analysis.</p>
+                <span class="skill-cta">View certificate</span>
+            </div>
+            <div class="skill-logo">
+                <img src="assets/excel-logo.png" alt="Excel logo" />
+            </div>
+        </a>
+
+        <!-- LLMs has several certificates, so it opens its own page -->
+        <a class="skill-row" href="assets/llm/index.html">
+            <div class="skill-text">
+                <h3>LLM</h3>
+                <p>Working with AI models to build smarter tools.</p>
+                <span class="skill-cta">View certificates</span>
+            </div>
+            <div class="skill-logo">
+                <img src="assets/llm-logo.png" alt="LLM logo" />
+            </div>
+        </a>
+    </section>
+
+    <!-- ====== PROJECTS ====== -->
+    <section class="projects" id="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <a class="project-card project-gateway" href="projects.html">
+            <p class="terminal-line"><span class="prompt">$</span> ls projects/</p>
+            <p class="gateway-count">Selected Work</p>
+            <p class="gateway-text">Tools, games and apps I've built, mostly in Python. Every one lives in its own GitHub repo.</p>
+            <span class="btn">Browse all projects</span>
+        </a>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="site-footer">
+        <a class="btn" href="mailto:mukherjeerhitam@gmail.com?subject=Hello%20Arkatanu">Email</a>
+        
+        <a class="btn" href="https://github.com/rhitamcoder" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+        <p class="footer-email">mukherjeerhitam@gmail.com</p>
+    </footer>
+
+</body>
+</html>
