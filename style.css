@@ -1,5 +1,7 @@
 /* ========== CSS VARIABLES (Theme) ========== */
 :root {
+    color-scheme: dark;
+    
     --bg: #0b0e14;
     --surface: #1c222e95;
     --text-primary: #e4e7ec;
