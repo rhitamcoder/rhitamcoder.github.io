@@ -540,6 +540,7 @@ img {
         border-width: 2px;
         padding: calc(0.7rem - 1px) calc(1.5rem - 1rem);
         background-color: rgba(110, 231, 183, 0.08);
+        box-shadow: 0 0 10px rgba(110, 231, 183, 0.25);
     }
 }
 
