@@ -535,6 +535,12 @@ img {
     .cert-row .cert-thumb {
         max-width: 420px;
     }
+
+    .btn {
+        border-width: 2px;
+        padding: calc(0.7rem - 1px) calc(1.5rem - 1rem);
+        background-color: rgba(110, 231, 183, 0.08);
+    }
 }
 
 /* ========== PROJECTS: HOME PAGE BOX ========== */
